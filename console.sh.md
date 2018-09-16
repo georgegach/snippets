@@ -10,6 +10,16 @@ ffmpeg -framerate 24 -pattern_type glob -i 'orand/*/*.png' \
         -c:v libx264 -r 24 -pix_fmt yuv420p occlusions2.mp4
 ```
 
+# Shell scripts
+## Enviromental variables
+```
+echo 'export MPI_TRAINING="/home/george/Projects/Datasets/MPI-Sintel-complete/training"' >> ~/.bashrc
+source ~/.bashrc
+```
+```
+echo 'export PATH="/home/george/Scripts:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
 
 
 
@@ -19,3 +29,5 @@ ffmpeg -framerate 24 -pattern_type glob -i 'orand/*/*.png' \
 ```
 dir *.png | %{$x=0} {Rename-Item $_ -NewName "Base$($x.tostring('000000')).png"; $x++ }
 ```
+
+
