@@ -1,2 +1,2 @@
 # snippets
-Userful scripts
+Some of the common snippets I use 
