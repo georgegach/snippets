@@ -17,6 +17,31 @@ ssh `squeue | grep ggach | awk '{print $8}'`
 scancel `squeue | grep ggach | awk '{print $1}'`
 ```
 
+# modules
+```
+#!/bin/bash
+declare -a modules=(
+        "cuda92/toolkit/9.2.148"
+        "cuda92/blas/9.2.148"
+        "cuda92/fft/9.2.148"
+        "cuda92/nsight/9.2.148"
+        "cuda92/profiler/9.2.148"
+)
+
+for m in "${modules[@]}"
+do
+  	cmd="module load $m"
+        echo "\$ $cmd"
+        eval $cmd
+done
+echo
+eval nvcc --version | tail -n 1
+echo
+```
+```
+source ~/scripts/modules.sh
+```
+
 
 # Enviromental variables
 ```
